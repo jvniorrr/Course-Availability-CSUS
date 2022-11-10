@@ -1,0 +1,10 @@
+{
+    "course": "CSC 133",
+    "season": "spring",
+    "year": "2023",
+    "twilio": {
+        "utilize": true,
+        "from": "+19169161234",
+        "to": "+19169161234"
+    }
+}
