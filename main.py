@@ -1,6 +1,6 @@
 import requests
 import json
-import re, os, time, logging, sys
+import re, os, time, logging, sys, random
 from twilio.rest import Client
 from notifypy import Notify
 from dotenv import load_dotenv
@@ -80,8 +80,6 @@ class SacSchedule():
                                 found = True
                                 break
                 
-                if not found:
-                    time.sleep(10)
 
             except requests.exceptions.HTTPError as e:
                 logger.error("Error retrieving web page.")
@@ -92,6 +90,9 @@ class SacSchedule():
                 logger.error('Uncaught error')
                 logger.error(e)
                 continue
+
+            if not found:
+                time.sleep(random.randint(30, 60))
 
 
 if __name__ == "__main__":
